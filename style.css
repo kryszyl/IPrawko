@@ -1,167 +1,233 @@
-*{
-    margin: 0px;
-    padding: 0px;
-    box-sizing: border-box;
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
 }
-body{
-    font-family: 'Raleway', sans-serif;
+body {
+    font-size: 10px;
+  font-family: "Raleway", sans-serif;
 }
-
+header {
+    background: linear-gradient(rgba(0, 153, 255, 0.35), rgba(0, 153, 255, 0.35)),
+    url(./photos/road.jpg), no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+}
 .nav {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    min-height: 6vh;
-    background-image: linear-gradient(90deg , #0099ff, #026bb1);
-
+    
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 10vh;
+  transition: 0.6s;
+  /* background-color: #0099ff; */
+  /* background-image: linear-gradient(90deg , #0099ff, #026bb1); */
+}
+.sticky {
+    position: fixed;
+    top: 0;
+    z-index: 100;
+    width: 100%;
+    background-color: #0099ff;
+    height: 8vh
 }
 
-.nav__logo {
-    width: 60px;
+
+.nav__name {
+  padding-top: 10px;
+  font-size: 3em;
+  font-family: "Condiment", sans-serif;
+  color: #f6f2ee;
 }
 .nav__list {
-    display: flex;
-    justify-content: space-around;
-    width: 50%;
+  display: flex;
+  justify-content: space-around;
+  width: 50%;
 }
 .nav__item {
-    
-    list-style: none;
-
+  list-style: none;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  transition-property: transform;
+  transition-duration: 0.3s;
 }
-.nav__link{
-    
-    text-align: center;
-    text-decoration: none;
-    color: rgb(228, 228, 228);
-    letter-spacing: 2px;
-    font-size: 14px;
-
+.nav__link {
+  text-align: center;
+  text-decoration: none;
+  color: #f6f2ee;
+  letter-spacing: 2px;
+  font-size: 1.6em;
 }
-.nav__logo {
-    display: block;
-    float: left;
-    color: rgb(230, 230, 230);
-    text-transform: uppercase;
-    letter-spacing: 5px;
-    font-size: 20px;
 
+.nav__item:hover {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
 }
 
 .nav__burger {
-    display: none;
+  display: none;
 }
 
-.nav__burger div{
-    width: 25px;
-    height: 3px;
-    background-color: rgb(230, 230, 230);
-    margin: 5px;
-    transition: all 0.3s ease;
+.nav__burger div {
+  width: 25px;
+  height: 3px;
+  background-color: #f6f2ee;
+  margin: 5px;
+  transition: all 0.3s ease;
 }
 
 .main {
-    width: 100%;
-    background: rgb(230, 230, 230);
+    height: 200vh;
+  width: 100%;
+  background: #f6f2ee;
 }
 
-.about {
-    height: 90vh;
-    width: 100%;
-    background-image: linear-gradient(90deg , #0099ff, #026bb1);
+.banner {
+  height: 90vh;
+  width: 100%;
+  /* background: linear-gradient(rgba(0, 153, 255, 0.35), rgba(0, 153, 255, 0.35)),
+    url(./photos/road.jpg), no-repeat;
+  background-size: cover; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.banner__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  width: 60%;
+  margin: auto;
+  color: #f6f2ee ;
+}
+
+.banner__container > * {
+    margin-bottom: 10%;
+}
+
+.banner__header {
+    font-size: 3.4em;
+    letter-spacing: 2px;
+}
+.banner__text {
+    line-height: 25px;
+    font-size: 2.0em;
+    text-align: center;
+    letter-spacing: 2px;
+}
+
+
+.banner__btns {
+    width: 60%;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.banner__btn {
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 40%;
+    height: 50px;
+    border-radius: 15px;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 1.4em;
+    font-weight: 600;
+    color: #f6f2ee;
+    letter-spacing: 2px;
+    transition-property: transform;
+    transition-duration: 0.3s;
+}
+.banner__btn:hover{
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
+.banner__btn:nth-child(1) {
+    background-color: #56bad4;
 }
 
-.about::before {
-    content: '';
+.banner__btn:nth-child(2) {
+    background-color: #98c7c9;
+}
+
+.banner__btn:nth-child(1):hover {
+    background-color: #0099ff;
+}
+
+.banner__btn:nth-child(2):hover {
+    background-color: #0099ff;
+}
+
+.banner__btnText {
+    text-decoration: none;
+    color: #f6f2ee;
+}
+
+@media screen and (max-width: 1024px) {
+  .nav__list {
+    width: 70%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    overflow-x: hidden;
+  }
+  .nav__list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 200px;
-    background: rgb(230, 230, 230);
-    clip-path: polygon(100% 0, -10% 100%, 100% 100%);
+    top: 0;
+    right: 0px;
+    height: 100vh;
+    width: 50%;
+    padding-top: 30px;
+    background-color: #0099ff;
+    transform: translateX(100%);
+    transition: transform 0.5s ease-in;
+  }
+
+  .nav__item {
+    opacity: 0;
+  }
+
+  .nav__burger {
+    display: block;
+    cursor: pointer;
+  }
+
+  .nav__list--active {
+    transform: translateX(0%);
+  }
+  /* TODO adjust burger cross after animation */
+  .burger__line1--toggle {
+    transform: rotate(-45deg) translate(-5px, 6px);
+  }
+  .burger__line2--toggle {
+    opacity: 0;
+  }
+  .burger__line3--toggle {
+    transform: rotate(45deg) translate(-5px, -6px);
+  }
+
+  @keyframes navLinkFade {
+    from {
+      opacity: 0;
+      transform: translateX(50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0px);
+    }
+  }
 }
-
-.about__container {
-    width: 60%;
-    margin: auto;    
-}
-.about__quoute {
-
-}
-
-
-
-
-
-
-
-
-
-
-@media screen and (max-width: 1024px){
-    .nav__list {
-        width: 70%;
-    }
-}
-
-@media screen and (max-width: 768px){
-    body {
-        overflow-x: hidden;
-    }
-    .nav__list {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        position: absolute;
-        top: 6vh;
-        right: 0px;
-        height: 94vh;
-        width: 50%;
-        background-color: rgb(24, 50, 67);
-        transform: translateX(100%);
-        transition: transform 0.5s ease-in;
-    }
-
-    .nav__item {
-        opacity: 0;
-    }
-
-    .nav__burger {
-        display: block;
-        cursor: pointer;
-    }
-
-    .nav__list--active {
-        transform: translateX(0%);
-    }
-    /* TODO adjust burger cross after animation */
-    .burger__line1--toggle{
-        transform: rotate(-45deg) translate(-5px, 6px);
-    }
-    .burger__line2--toggle{
-        opacity: 0;
-    }
-    .burger__line3--toggle{
-        transform: rotate(45deg) translate(-5px, -6px);
-    }
-
-    @keyframes navLinkFade {
-        from{
-            opacity: 0;
-            transform: translateX(50px)
-        }
-        to {
-            opacity: 1;
-            transform: translateX(0px);
-        }
-        
-    }
-
-
-
-}
-
