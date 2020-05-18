@@ -30,6 +30,20 @@ const navSlide = () => {
 
 }
 
-navSlide();
+const setStickyNavbar = () => {
+    window.addEventListener('scroll', ()=>{
+        if(window.scrollY > 0){
+            document.querySelector('nav').classList.toggle('sticky', window.scrollY > 0);
+            document.querySelector('.banner').style.paddingTop = '20vh';
+        } else if (window.scrollY <= 0){
+            document.querySelector('nav').classList.remove('sticky');
+            document.querySelector('.banner').style.paddingTop = '0vh';
+        }
+    })
+}
 
+
+
+navSlide();
+setStickyNavbar();
 
