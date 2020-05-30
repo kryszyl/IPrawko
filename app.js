@@ -1,3 +1,43 @@
+const cards = document.querySelectorAll('.about__card');
+const aboutHeader = document.querySelector('.about__header');
+const pricesHeader = document.querySelector('.prices__header');
+const pricesContainer = document.querySelector('.prices__container')
+
+const isInViewport = (element) => {
+  const rect = element.getBoundingClientRect();
+  const html = document.documentElement;
+
+  return rect.top >= 0 &&
+        rect.left >= 0 &&
+        rect.bottom <= (window.innerHeight && html.clientHeight) && 
+        rect.right <= (window.innerWidth && html.clientWidth);
+};
+
+const animateCardsInView = () => {
+  window.addEventListener('scroll', () => {        
+        cards.forEach(c => {
+          if (isInViewport(c)) {
+            console.log('in view')
+            c.style.opacity = '1'
+          }
+          else {
+            c.style.opacity = '0'
+            console.log('not in view')
+          }
+        });
+      });
+};
+
+const animatePricesInView = () => {
+  window.addEventListener('scroll', () => {
+    if (isInViewport(pricesHeader)) {
+      pricesContainer.style.transform = 'translateX(0vw)';
+    } else {
+      pricesContainer.style.transform = 'translateX(-100vw)';
+    }
+  });
+}
+
 const navSlide = () => {
   const burger = document.querySelector('.nav__burger');
   const nav = document.querySelector('.nav__list');
@@ -42,5 +82,9 @@ const setStickyNavbar = () => {
   });
 };
 
+
+
+animateCardsInView();
+animatePricesInView();
 navSlide();
 setStickyNavbar();
