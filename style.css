@@ -6,7 +6,6 @@
     #0099ff
 */
 
-
 * {
   margin: 0px;
   padding: 0px;
@@ -194,8 +193,7 @@ header {
   align-items: center;
   width: 100%;
   height: 20%;
-  color:#324c6b
-  
+  color: #324c6b;
 }
 
 .about__header {
@@ -212,7 +210,7 @@ header {
   font-weight: 500;
 }
 
-.about__cardContainer{
+.about__cardContainer {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -220,7 +218,6 @@ header {
   flex-wrap: wrap;
   width: 75%;
   height: 70%;
-  
 }
 
 .about__card {
@@ -229,10 +226,11 @@ header {
   justify-content: space-around;
   width: 50%;
   height: 50%;
+  opacity: 0;
+  transition: opacity 0.8s ease-in;
 }
 
 .about__card > i {
-
   font-size: 3.2em;
 }
 
@@ -255,26 +253,86 @@ header {
 
 .about__description {
   margin-top: 2vh;
-  word-spacing:-2px;
+  word-spacing: -2px;
   text-justify: distribute;
-text-align-last: left;
+  text-align-last: left;
   font-size: 1.4em;
   letter-spacing: 2px;
   word-wrap: break-word;
 }
 
-.crew {
+.prices {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
   background-color: #324c6b;
   height: 100vh;
+  width: 100vw;
+  
 }
 
+.prices__header {
+  font-size: 3.4em;
+  letter-spacing: 2px;
+  font-weight: 900;
+  color: #f6f2ee;
+}
 
+.prices__container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  height: 70%;
+  width: 70%;
+  background: #f6f2ee;
+  -webkit-box-shadow: 0px 30px 45px 0px rgba(0,0,0,1);
+  -moz-box-shadow: 0px 30px 45px 0px rgba(0,0,0,1);
+  box-shadow: 0px 30px 45px 0px rgba(0,0,0,1);
+  transform: translateX(-100vw);
+  transition: transform  0.5s ease-in;
+}
+
+.prices__items {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  list-style: none;
+}
+
+.prices__item {
+  font-size: 1.6em;
+  color: #324c6b;
+
+}
+
+.gallery {
+  height: 100vh;
+  width: 100vw;
+}
+.gallery__carousel { 
+  height: 80%;
+  width: 80%;
+  margin: 0 auto;
+} 
+
+.gallery__slide {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+.gallery__slide img {
+  height: 100%;
+  width: 100%;
+}
 
 @media screen and (max-width: 1024px) {
   .nav__list {
     width: 70%;
   }
-  .about { 
+  .about {
     height: 200vh;
   }
   .about__headerContainer {
@@ -282,17 +340,18 @@ text-align-last: left;
   }
   .about__cardContainer {
     display: flex;
-    flex-direction: column;
-    height: 190%;
-    
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 90%;
   }
   .about__card {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 50%;
-    height: 30%;
+    width: 70%;
+    height: 20%;
     text-align: center;
   }
 }
@@ -342,7 +401,6 @@ text-align-last: left;
   .about__card {
     width: 100%;
   }
-
 
   @keyframes navLinkFade {
     from {
