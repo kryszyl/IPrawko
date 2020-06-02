@@ -49,15 +49,8 @@ const navSlide = () => {
     nav.classList.toggle('nav__list--active');
 
     //links animation
-    navItems.forEach((item, index) => {
-      if (item.style.animation) {
-        item.style.animation = ``;
-      } else {
-        item.style.animation = `navLinkFade 0.5s ease forwards ${
-          index / 7 + 0.3
-        }s`;
-      }
-    });
+
+
     // burger animation
 
     burgerLines.forEach((line, index) => {
@@ -65,6 +58,26 @@ const navSlide = () => {
 
       line.classList.toggle(`burger__line${index + 1}--toggle`);
     });
+
+      navItems.forEach((item, index) => {
+
+          
+        if (item.style.animation) {
+          item.style.animation = ``
+        } else {
+          item.style.animation = `navLinkFade 0.5s ease forwards ${
+            index / 7 + 0.3
+          }s`;
+        };
+
+        item.addEventListener('click', () => {
+          nav.classList.remove('nav__list--active')
+          navItems.forEach(item => item.style.animation = ``);
+          burgerLines.forEach((line, index) => {
+          line.classList.remove(`burger__line${index + 1}--toggle`);
+          });
+    });
+  });
   });
 };
 
@@ -81,6 +94,16 @@ const setStickyNavbar = () => {
     }
   });
 };
+
+// const slideCarousel = () => {
+//   document.querySelector('.gallery button').addEventListener('click', () => {
+//     if () {
+      
+//     } else {
+      
+//     }
+//   });
+// };
 
 
 
