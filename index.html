@@ -28,13 +28,13 @@
           <!-- <img class="nav__logo" src="/logo/logo.png" alt=""> -->
           <ul class="nav__list">
             <!-- <li class="nav__item"><a href="#" class="nav__link">Aktualności</a></li> -->
-            <li class="nav__item"><a href="#" class="nav__link">O nas</a></li>
-            <li class="nav__item"><a href="#" class="nav__link">Cennik</a></li>
+            <li class="nav__item"><a href="#about" class="nav__link">O nas</a></li>
+            <li class="nav__item"><a href="#prices" class="nav__link">Cennik</a></li>
             <li class="nav__item">
-              <a href="#" class="nav__link">Galeria</a>
+              <a href="#gallery" class="nav__link">Galeria</a>
             </li>
-            <li class="nav__item"><a href="#" class="nav__link">Opinie</a></li>
-            <li class="nav__item"><a href="#" class="nav__link">Kontakt</a></li>
+            <li class="nav__item"><a href="#reviews" class="nav__link">Opinie</a></li>
+            <li class="nav__item"><a href="#contact" class="nav__link">Kontakt</a></li>
           </ul>
           <div class="nav__burger">
             <div class="burger__line1"></div>
@@ -57,7 +57,7 @@
         </div>
       </header>
       <main class="main">
-        <section class="about">
+        <section class="about" id="about">
           <div class="about__headerContainer">
             <h2 class="about__header">Trochę o nas</h2>
             <h3 class="about__subheader">
@@ -129,7 +129,7 @@
             </div>
           </div>
         </section>
-        <section class="prices">
+        <section class="prices" id="prices">
           <h2 class="prices__header">Cennik</h2>
           <div class="prices__container">
             <ul class="prices__items">
@@ -148,7 +148,7 @@
             </ul>
           </div>
         </section>
-        <section class="gallery">
+        <section class="gallery" id="gallery">
           <div class="gallery__carousel">
             <div class="gallery__slide">
             <img src="/photos/road.jpg" alt="" class="gallery__photo" />
@@ -157,9 +157,11 @@
             <img src="/photos/road.jpg" alt="" class="gallery__photo" />
             <img src="/photos/road.jpg" alt="" class="gallery__photo" />
           </div>
+          <button class="gallery__btnPrev"></button>
+          <button class="gallery__btnNext"></button>
         </div>
         </section>
-        <section class="reviews">
+        <section class="reviews" id="reviews">
           <div class="reviews__container">
             <h4 class="reviews__name"></h4>
             <h5 class="reviews__grade"></h5>
@@ -176,7 +178,7 @@
             <p class="reviews__text"></p>
           </div>
         </section>
-        <section class="contact">
+        <section class="contact" id="contact">
           <form action="" class="contact__form"></form>
           <div class="contact__container">
             <i class="contact__icon"></i>
