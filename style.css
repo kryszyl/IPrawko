@@ -176,7 +176,10 @@ header {
   text-decoration: none;
   color: #f6f2ee;
 }
-
+.container {
+  /* overflow-y: scroll; */
+  scroll-behavior: smooth;
+}
 .about {
   display: flex;
   flex-direction: column;
@@ -184,6 +187,7 @@ header {
   justify-content: space-evenly;
   width: 100%;
   height: 100vh;
+  background: #f6f2ee;
 }
 
 .about__headerContainer {
@@ -200,13 +204,14 @@ header {
   font-size: 3.4em;
   letter-spacing: 2px;
   font-weight: 900;
+  text-align: center;
   /* line-height: 12%; */
 }
 
 .about__subheader {
   font-size: 2em;
   letter-spacing: 2px;
-
+  text-align: center;
   font-weight: 500;
 }
 
@@ -217,7 +222,7 @@ header {
   justify-content: space-evenly;
   flex-wrap: wrap;
   width: 75%;
-  height: 70%;
+  height: 80%;
 }
 
 .about__card {
@@ -269,7 +274,6 @@ header {
   background-color: #324c6b;
   height: 100vh;
   width: 100vw;
-  
 }
 
 .prices__header {
@@ -309,18 +313,24 @@ header {
 .gallery {
   height: 100vh;
   width: 100vw;
+  display: flex; 
+   justify-content: center;
+  align-items: center; 
+  flex-direction: column;
+  position: relative;
+
 }
 .gallery__carousel { 
   height: 80%;
-  width: 80%;
+  width: 100%;
   margin: 0 auto;
+  overflow: hidden;
 } 
 
 .gallery__slide {
   display: flex;
   height: 100%;
   width: 100%;
-  overflow: hidden;
 }
 
 .gallery__slide img {
@@ -328,19 +338,41 @@ header {
   width: 100%;
 }
 
+#btnPrev{
+  position: absolute;
+  top: 50%;
+  left: 5%;
+  z-index: 10;
+  font-size: 30px;
+  color: #f6f2ee;
+}
+#btnNext{
+  position: absolute;
+  top: 50%;
+  right: 5%;
+  z-index: 10;
+  font-size: 30px;
+  color: #f6f2ee;
+}
+.reviews {
+}
+
+.contact {
+}
+
 @media screen and (max-width: 1024px) {
   .nav__list {
-    width: 70%;
+    width: 100%;
   }
   .about {
-    height: 200vh;
+    height: 250vh;
   }
   .about__headerContainer {
     height: 10%;
   }
   .about__cardContainer {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;
     width: 100%;
     height: 90%;
@@ -350,7 +382,7 @@ header {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 70%;
+    width: 100%;
     height: 20%;
     text-align: center;
   }
@@ -360,6 +392,12 @@ header {
   body {
     overflow-x: hidden;
   }
+  .banner__btns {
+    width: 100%;
+  }
+  .banner__btn {
+    width: 40%;
+  }
   .nav__list {
     display: flex;
     flex-direction: column;
@@ -368,7 +406,7 @@ header {
     top: 0;
     right: 0px;
     height: 100vh;
-    width: 50%;
+    width: 100%;
     padding-top: 30px;
     background-color: #0099ff;
     transform: translateX(100%);
@@ -399,6 +437,14 @@ header {
   }
 
   .about__card {
+    width: 100%;
+  }
+
+  .about__description {
+    text-align: center;
+  }
+
+  .prices__container {
     width: 100%;
   }
 
