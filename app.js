@@ -6,6 +6,14 @@ const gallerySlide = document.querySelector('.gallery__slide');
 const galleryImgs = document.querySelectorAll('.gallery__photo');
 const btnPrev = document.querySelector('#btnPrev');
 const btnNext = document.querySelector('#btnNext');
+const reviewSection = document.querySelector('.reviews');
+const reviewCountContainer = document.querySelector('.reviews__gradeContainer');
+const likesCounter = document.querySelector('.reviews__likes');
+const likesIcon = document.querySelector('.fa-thumbs-up');
+const usersCounter = document.querySelector('.reviews__users');
+const usersIcon = document.querySelector('.fa-handshake-o');
+const gradesCounter = document.querySelector('.reviews__grades');
+const gradesIcon = document.querySelector('.fa-star');
 
 const isInViewport = (element) => {
   const rect = element.getBoundingClientRect();
@@ -132,8 +140,46 @@ const slideCarousel = () => {
   });
 };
 
+const animateCount = (counterElement, icon, count, multiplier, timeout) => {
+  window.addEventListener('scroll', () => {
+    if(isInViewport(reviewSection)) {
+      for (let index = 0; index <= count; index++) {
+        setTimeout(() => {
+        icon.style.fontSize = index * multiplier + 'px';
+        counterElement.textContent = index.toString();               
+        }, index * timeout);
+      }
+    }
+    else if (!isInViewport(reviewCountContainer)){
+      counterElement.textContent = '';
+      icon.style.fontSize = '0px';
+    }
+  });
+};
+
+const countLikes = () => {
+
+    animateCount(likesCounter, likesIcon, 206, 0.15, 10);
+
+};
+
+const countStudents = () => {
+  console.log(usersIcon.classList);  
+  animateCount(usersCounter, usersIcon, 1000, 0.03, 2);
+
+};
+
+const countGrades = () => {
+
+  animateCount(gradesCounter, gradesIcon, 18, 1.67, 100);
+
+};
+
 animateCardsInView();
 animatePricesInView();
 navSlide();
 setStickyNavbar();
 slideCarousel();
+countLikes();
+countStudents();
+countGrades();
