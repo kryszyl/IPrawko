@@ -37,7 +37,7 @@ header {
   z-index: 100;
   width: 100%;
   background-color: #0099ff;
-  height: 8vh;
+  height: 6vh;
 }
 
 .nav__name {
@@ -222,7 +222,7 @@ header {
   justify-content: space-evenly;
   flex-wrap: wrap;
   width: 75%;
-  height: 80%;
+  height: 70%;
 }
 
 .about__card {
@@ -290,11 +290,11 @@ header {
   height: 70%;
   width: 70%;
   background: #f6f2ee;
-  -webkit-box-shadow: 0px 30px 45px 0px rgba(0,0,0,1);
-  -moz-box-shadow: 0px 30px 45px 0px rgba(0,0,0,1);
-  box-shadow: 0px 30px 45px 0px rgba(0,0,0,1);
+  -webkit-box-shadow: 0px 30px 45px 0px rgba(0, 0, 0, 1);
+  -moz-box-shadow: 0px 30px 45px 0px rgba(0, 0, 0, 1);
+  box-shadow: 0px 30px 45px 0px rgba(0, 0, 0, 1);
   transform: translateX(-100vw);
-  transition: transform  0.5s ease-in;
+  transition: transform 0.5s ease-in;
 }
 
 .prices__items {
@@ -307,25 +307,23 @@ header {
 .prices__item {
   font-size: 1.6em;
   color: #324c6b;
-
 }
 
 .gallery {
   height: 100vh;
   width: 100vw;
-  display: flex; 
-   justify-content: center;
-  align-items: center; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
   flex-direction: column;
   position: relative;
-
 }
-.gallery__carousel { 
-  height: 80%;
+.gallery__carousel {
+  height: 100%;
   width: 100%;
   margin: 0 auto;
   overflow: hidden;
-} 
+}
 
 .gallery__slide {
   display: flex;
@@ -338,24 +336,108 @@ header {
   width: 100%;
 }
 
-#btnPrev{
+#btnPrev {
   position: absolute;
   top: 50%;
   left: 5%;
   z-index: 10;
-  font-size: 30px;
+  font-size: 50px;
   color: #f6f2ee;
+  opacity: 0.5;
+  transition: opacity 0.3s ease-in;
 }
-#btnNext{
+#btnNext {
   position: absolute;
   top: 50%;
   right: 5%;
   z-index: 10;
-  font-size: 30px;
+  font-size: 50px;
   color: #f6f2ee;
+  opacity: 0.5;
+  transition: opacity 0.3s ease-in;
+}
+
+#btnNext:hover {
+  opacity: 1;
+}
+
+#btnPrev:hover {
+  opacity: 1;
 }
 .reviews {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
 }
+
+.reviews__headerContainer {
+  padding-top: 5vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 20%;
+  color: #324c6b;
+}
+
+.reviews__header {
+  font-size: 3.4em;
+  letter-spacing: 2px;
+  font-weight: 900;
+  text-align: center;
+  /* line-height: 12%; */
+}
+
+.reviews__subheader {
+  font-size: 2em;
+  letter-spacing: 2px;
+  text-align: center;
+  font-weight: 500;
+}
+
+.reviews__gradeContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  height: 20%;
+  width: 60%;
+}
+
+.reviews__counters {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.reviews__counters h4 {
+   font-size: 1.7em;
+}
+.reviews__counters p {
+  text-align: center;
+}
+.reviews__container {
+  height: 60%;
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  
+}
+
+.reviews__content {
+  height: 30;
+  width: 100%;
+  font-size: 1.5em;
+  letter-spacing: 2px;
+}
+
+.reviews__content:nth-child(2) {
+  text-align: right;
+}
+
 
 .contact {
 }
@@ -365,7 +447,7 @@ header {
     width: 100%;
   }
   .about {
-    height: 250vh;
+    height: 200vh;
   }
   .about__headerContainer {
     height: 10%;
@@ -381,9 +463,16 @@ header {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
     width: 100%;
-    height: 20%;
+    height: 25%;
+    text-align: center;
+  }
+
+  .reviews__text {
+    text-align: center;
+  }
+  .reviews__name {
     text-align: center;
   }
 }
@@ -437,11 +526,11 @@ header {
   }
 
   .about__card {
-    width: 100%;
+    width: 75%;
   }
 
   .about__description {
-    text-align: center;
+    text-align: justify;
   }
 
   .prices__container {
